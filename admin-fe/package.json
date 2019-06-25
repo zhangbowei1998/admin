@@ -23,5 +23,9 @@
   "scripts": {
     "serve": "webpack-dev-server",
     "build:dev": "webpack"
+  },
+  "dependencies": {
+    "randomstring": "^1.1.5",
+    "socket.io": "^2.2.0"
   }
 }

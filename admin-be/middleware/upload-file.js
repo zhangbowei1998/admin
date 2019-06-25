@@ -45,7 +45,7 @@ class FileUpload {
         fileSize: 1024 * 1024
       },
       fileFilter: fileUpload._fileFilter
-    }).single('companyLogo')
+    }).single('mainPic')
 
     upload(req, res, (err) => {
       if (err) {

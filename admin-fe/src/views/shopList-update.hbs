@@ -1,15 +1,15 @@
 <div class="box box-info">
   <div class="box-header with-border">
-    <h3 class="box-title">添加信息</h3>
+    <h3 class="box-title">商品编辑</h3>
   </div>
-  <!-- /.box-header -->
-  <!-- form start -->
-  <form class="form-horizontal" id="possave" action="/api/list" method="post" enctype="multipart/form-data">
+
+  <form class="form-horizontal" action="/api/list/update" id="possave" method="post" enctype="multipart/form-data">
     <div class="box-body">
       <div class="form-group">
         <label for="mainPic" class="col-sm-2 control-label">商品图片</label>
 
         <div class="col-sm-10">
+          <img src="http://localhost:3000/upload/{{mainPic}}" style="width:50px;height:50px;" alt="">
           <input type="file" class="form-control" name="mainPic" id="mainPic" placeholder="请选择商品图片">
         </div>
       </div>
@@ -17,43 +17,38 @@
         <label for="goodsName" class="col-sm-2 control-label">商品名称</label>
 
         <div class="col-sm-10">
-          <input type="text" class="form-control" name="goodsName" id="goodsName" placeholder="请输入商品名称">
+          <input type="text" class="form-control" value="{{goodsName}}" name="goodsName" id="goodsName"
+            placeholder="请输入商品名称">
         </div>
       </div>
       <div class="form-group">
         <label for="discountPrice" class="col-sm-2 control-label">折扣价格</label>
 
         <div class="col-sm-10">
-          <input type="text" class="form-control" name="discountPrice" id="discountPrice" placeholder="请输入折扣价格">
+          <input type="text" class="form-control" value="{{discountPrice}}" name="discountPrice" id="discountPrice"
+            placeholder="请输入折扣价格">
         </div>
       </div>
       <div class="form-group">
         <label for="marketPrice" class="col-sm-2 control-label">市场价格</label>
 
         <div class="col-sm-10">
-          <input type="text" class="form-control" name="marketPrice" id="marketPrice" placeholder="请输入市场价格">
+          <input type="text" class="form-control" value="{{marketPrice}}" name="marketPrice" id="marketPrice" placeholder="请输入市场价格">
         </div>
       </div>
       <div class="form-group">
         <label for="salePrice" class="col-sm-2 control-label">销售价格</label>
 
         <div class="col-sm-10">
-          <input type="text" class="form-control" name="salePrice" id="salePrice" placeholder="请输入销售价格">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="sku" class="col-sm-2 control-label">商品编号</label>
-
-        <div class="col-sm-10">
-          <input type="text" class="form-control" name="sku" id="sku" placeholder="请输入商品编号">
+          <input type="text" class="form-control" value="{{salePrice}}" name="salePrice" id="salePrice" placeholder="请输入销售价格">
         </div>
       </div>
     </div>
-    <!-- /.box-body -->
+
     <div class="box-footer">
       <button type="button" id="posback" class="btn btn-default">返回</button>
       <button type="button" id="possubmit" class="btn btn-info pull-right">提交</button>
     </div>
-    <!-- /.box-footer -->
+    <input type="hidden" name="id" value="{{_id}}">
   </form>
 </div>
